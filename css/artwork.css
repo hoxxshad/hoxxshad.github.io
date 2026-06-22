@@ -1,0 +1,209 @@
+/* =========================================
+   ARTWORK PAGE STYLES
+   ========================================= */
+
+/* ---- Page header sub ---- */
+.page-header__sub {
+  margin-top: 20px;
+  font-size: 15px; color: var(--muted);
+  max-width: 440px; line-height: 1.7;
+}
+
+/* ---- Featured piece ---- */
+.art-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  margin: 0 var(--h-pad);
+  border: 1px solid var(--border);
+}
+
+.art-featured__media {
+  position: relative;
+  background: var(--bg-3);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+}
+.art-featured__placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: var(--muted); letter-spacing: .1em;
+}
+.art-featured__label {
+  position: absolute; bottom: 20px; left: 24px;
+  font-size: 10px; letter-spacing: .18em;
+}
+
+.art-featured__info {
+  padding: 64px 56px;
+  display: flex; flex-direction: column;
+  justify-content: center; gap: 20px;
+}
+.art-featured__title { line-height: .9; }
+.art-featured__series { font-size: 12px; margin-top: -8px; }
+.art-featured__desc {
+  font-size: 14px; color: var(--muted);
+  line-height: 1.85; max-width: 400px;
+}
+.art-featured__meta {
+  display: flex; gap: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.art-featured__meta-item {
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: 13px;
+}
+
+/* ---- Artwork grid ---- */
+.art-grid-section { padding: 64px var(--h-pad) 80px; }
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+/* art card */
+.art-card {
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  transition: background .2s;
+  cursor: pointer;
+}
+.art-card:hover { background: var(--bg-2); }
+.art-card.hidden { display: none; }
+
+.art-card__media {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--bg-3);
+  overflow: hidden;
+}
+.art-card__placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: var(--muted); letter-spacing: .1em;
+  transition: opacity .3s;
+}
+.art-card:hover .art-card__placeholder { opacity: .5; }
+
+.art-card__overlay {
+  position: absolute; inset: 0;
+  background: rgba(8,8,8,.5);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .25s;
+}
+.art-card:hover .art-card__overlay { opacity: 1; }
+
+.art-card__expand {
+  width: 44px; height: 44px;
+  border: 1px solid var(--white);
+  background: none; color: var(--white);
+  font-size: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.art-card__expand:hover {
+  background: var(--red); border-color: var(--red); color: var(--white);
+}
+
+.art-card__info { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.art-card__header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px;
+}
+.art-card__title {
+  font-family: var(--font-display);
+  font-size: 22px; letter-spacing: .04em;
+  text-transform: uppercase; line-height: 1;
+}
+.art-card__num  { font-size: 10px; flex-shrink: 0; }
+.art-card__desc { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.art-card__foot {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap; margin-top: 4px;
+}
+.art-card__year { font-size: 10px; margin-left: auto; }
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(4,4,4,.96);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 40px;
+  animation: fadeIn .2s ease;
+}
+.lightbox[hidden] { display: none; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.lightbox__close {
+  position: absolute; top: 24px; right: 32px;
+  background: none; border: 1px solid var(--border);
+  color: var(--muted); font-size: 16px;
+  width: 40px; height: 40px; cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.lightbox__close:hover { border-color: var(--red); color: var(--red); }
+
+.lightbox__inner {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 80vh;
+}
+
+.lightbox__media {
+  background: var(--bg-3);
+  aspect-ratio: 4/5;
+  max-height: 70vh;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 12px; letter-spacing: .1em;
+  border: 1px solid var(--border);
+}
+
+.lightbox__info {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.lightbox__info .art-card__title { font-size: 36px; }
+.lightbox__info .art-card__desc  { font-size: 14px; line-height: 1.8; }
+
+.lightbox__nav {
+  display: flex; align-items: center; gap: 32px;
+  margin-top: 32px;
+}
+.lightbox__nav-btn {
+  background: none; border: 1px solid var(--border);
+  color: var(--muted); font-size: 11px;
+  letter-spacing: .16em; text-transform: uppercase;
+  padding: 10px 20px; cursor: pointer;
+  font-family: var(--font-body);
+  transition: border-color .2s, color .2s;
+}
+.lightbox__nav-btn:hover { border-color: var(--white); color: var(--white); }
+.lightbox__nav-count { font-size: 11px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .art-featured { grid-template-columns: 1fr; }
+  .art-featured__media { min-height: 340px; border-right: none; border-bottom: 1px solid var(--border); }
+  .art-featured__info { padding: 48px; }
+  .art-grid { grid-template-columns: repeat(2, 1fr); }
+  .lightbox__inner { grid-template-columns: 1fr; }
+  .lightbox__media { max-height: 50vh; }
+}
+@media (max-width: 768px) {
+  .filter-bar { padding: 16px 24px; flex-wrap: wrap; }
+  .art-featured__info { padding: 40px 24px; }
+  .art-grid-section { padding: 40px 24px 60px; }
+  .art-grid { grid-template-columns: 1fr; }
+  .lightbox { padding: 20px; }
+  .lightbox__nav { gap: 16px; }
+  .page-header { padding: 40px 24px 36px; }
+}

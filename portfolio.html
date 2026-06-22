@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — HOXX</title>
+  <script>
+    // Apply saved theme before first paint to prevent a theme flash on navigation.
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('hoxx-theme') || 'dark');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-slash">/</span>HOXX</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="models.html">Models</a></li>
+    </ul>
+    <div class="nav__right">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">◑</button>
+      <a href="about.html#contact" class="nav__cta btn btn--red">Get in Touch</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header__breadcrumb">
+        <span class="u-muted u-mono">HOME</span>
+        <span class="u-muted u-mono"> ▶ </span>
+        <span class="u-mono u-red">PORTFOLIO</span>
+      </div>
+      <h1 class="display display--xl page-header__title">WORK</h1>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <span class="filter-bar__label u-mono u-muted">Filter</span>
+      <div class="filter-bar__tags">
+        <button class="filter-tag active" data-filter="all">All</button>
+        <button class="filter-tag" data-filter="web">Web</button>
+        <button class="filter-tag" data-filter="design">Design</button>
+        <button class="filter-tag" data-filter="motion">Motion</button>
+      </div>
+      <span class="filter-bar__count u-mono u-muted" id="projectCount">04 Projects</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PROJECT LIST -->
+    <section class="project-list">
+
+      <!-- Project 01 -->
+      <article class="project-row" data-category="web" data-index="0">
+        <div class="project-row__num u-mono u-muted">01</div>
+        <div class="project-row__info">
+          <h2 class="project-row__title display display--md">Project Alpha</h2>
+          <div class="project-row__tags">
+            <span class="card__tag">Web</span>
+            <span class="card__tag">React</span>
+            <span class="card__tag">Node.js</span>
+          </div>
+        </div>
+        <p class="project-row__desc">
+          A full-stack web application with real-time data, bold visual identity,
+          and a focus on performance and accessibility.
+        </p>
+        <a href="#project-alpha" class="project-row__cta btn btn--ghost">
+          View <span class="btn__arrow">→</span>
+        </a>
+      </article>
+
+      <div class="divider"></div>
+
+      <!-- Project 02 -->
+      <article class="project-row" data-category="design" data-index="1">
+        <div class="project-row__num u-mono u-muted">02</div>
+        <div class="project-row__info">
+          <h2 class="project-row__title display display--md">Brand System</h2>
+          <div class="project-row__tags">
+            <span class="card__tag">Design</span>
+            <span class="card__tag">Branding</span>
+            <span class="card__tag">Typography</span>
+          </div>
+        </div>
+        <p class="project-row__desc">
+          Complete visual identity for a digital-first brand — logo, type scale,
+          color system, and component library.
+        </p>
+        <a href="#brand-system" class="project-row__cta btn btn--ghost">
+          View <span class="btn__arrow">→</span>
+        </a>
+      </article>
+
+      <div class="divider"></div>
+
+      <!-- Project 03 -->
+      <article class="project-row" data-category="web motion" data-index="2">
+        <div class="project-row__num u-mono u-muted">03</div>
+        <div class="project-row__info">
+          <h2 class="project-row__title display display--md">Interactive CV</h2>
+          <div class="project-row__tags">
+            <span class="card__tag">Web</span>
+            <span class="card__tag">Motion</span>
+            <span class="card__tag">CSS</span>
+          </div>
+        </div>
+        <p class="project-row__desc">
+          An animated, interactive résumé built with pure CSS and vanilla JS —
+          no frameworks, no dependencies.
+        </p>
+        <a href="#interactive-cv" class="project-row__cta btn btn--ghost">
+          View <span class="btn__arrow">→</span>
+        </a>
+      </article>
+
+      <div class="divider"></div>
+
+      <!-- Project 04 -->
+      <article class="project-row" data-category="design web" data-index="3">
+        <div class="project-row__num u-mono u-muted">04</div>
+        <div class="project-row__info">
+          <h2 class="project-row__title display display--md">Dark UI Kit</h2>
+          <div class="project-row__tags">
+            <span class="card__tag">Design</span>
+            <span class="card__tag">Web</span>
+            <span class="card__tag">Components</span>
+          </div>
+        </div>
+        <p class="project-row__desc">
+          A minimal dark-mode component library designed for developer portfolios
+          and creative agency sites.
+        </p>
+        <a href="#dark-ui-kit" class="project-row__cta btn btn--ghost">
+          View <span class="btn__arrow">→</span>
+        </a>
+      </article>
+
+      <div class="divider"></div>
+
+    </section>
+
+    <!-- PROJECT DETAIL PANELS -->
+    <section class="project-details">
+
+      <div class="project-panel" id="project-alpha">
+        <div class="project-panel__media">
+          <div class="card__thumb-placeholder" style="height:100%">Project Alpha — Preview</div>
+        </div>
+        <div class="project-panel__info">
+          <p class="eyebrow">Web Development</p>
+          <h3 class="display display--md project-panel__title">Project Alpha</h3>
+          <p class="project-panel__body">
+            A full-stack web application featuring real-time data updates,
+            user authentication, and a highly polished interface. Built
+            with React on the front end and a Node/Express API on the back.
+          </p>
+          <dl class="project-panel__meta">
+            <dt>Year</dt><dd>2025</dd>
+            <dt>Role</dt><dd>Design + Development</dd>
+            <dt>Stack</dt><dd>React, Node.js, PostgreSQL</dd>
+          </dl>
+          <a href="#" class="btn btn--red" target="_blank" rel="noopener">
+            Live Site <span class="btn__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="project-panel project-panel--flip" id="brand-system">
+        <div class="project-panel__media">
+          <div class="card__thumb-placeholder" style="height:100%">Brand System — Preview</div>
+        </div>
+        <div class="project-panel__info">
+          <p class="eyebrow">Brand Identity</p>
+          <h3 class="display display--md project-panel__title">Brand System</h3>
+          <p class="project-panel__body">
+            End-to-end visual identity: logo marks, wordmarks, a typographic
+            scale, a curated color palette, and a living component library
+            delivered as a Figma file and CSS variables.
+          </p>
+          <dl class="project-panel__meta">
+            <dt>Year</dt><dd>2025</dd>
+            <dt>Role</dt><dd>Art Direction + Design</dd>
+            <dt>Tools</dt><dd>Figma, CSS</dd>
+          </dl>
+          <a href="#" class="btn btn--red" target="_blank" rel="noopener">
+            Case Study <span class="btn__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="project-panel" id="interactive-cv">
+        <div class="project-panel__media">
+          <div class="card__thumb-placeholder" style="height:100%">Interactive CV — Preview</div>
+        </div>
+        <div class="project-panel__info">
+          <p class="eyebrow">Web / Motion</p>
+          <h3 class="display display--md project-panel__title">Interactive CV</h3>
+          <p class="project-panel__body">
+            A résumé reimagined as an interactive experience. Hover states,
+            CSS keyframe animations, and a zero-dependency build — because
+            you don't always need a framework.
+          </p>
+          <dl class="project-panel__meta">
+            <dt>Year</dt><dd>2026</dd>
+            <dt>Role</dt><dd>Design + Dev</dd>
+            <dt>Stack</dt><dd>HTML, CSS, Vanilla JS</dd>
+          </dl>
+          <a href="#" class="btn btn--red" target="_blank" rel="noopener">
+            Live Site <span class="btn__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="project-panel project-panel--flip" id="dark-ui-kit">
+        <div class="project-panel__media">
+          <div class="card__thumb-placeholder" style="height:100%">Dark UI Kit — Preview</div>
+        </div>
+        <div class="project-panel__info">
+          <p class="eyebrow">Design + Web</p>
+          <h3 class="display display--md project-panel__title">Dark UI Kit</h3>
+          <p class="project-panel__body">
+            A component library for the dark-web aesthetic — buttons, cards,
+            navbars, form elements, and layout utilities. Documented and
+            open-source on GitHub.
+          </p>
+          <dl class="project-panel__meta">
+            <dt>Year</dt><dd>2026</dd>
+            <dt>Role</dt><dd>Design + Dev</dd>
+            <dt>Stack</dt><dd>CSS Custom Properties, JS</dd>
+          </dl>
+          <a href="https://github.com/hoxxshad" class="btn btn--red" target="_blank" rel="noopener">
+            GitHub <span class="btn__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer__copy">© 2026 HOXX — All rights reserved.</span>
+    <ul class="footer__links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/CodCatDev/CrosshairJs@main/src/crosshair.min.js"></script>
+</body>
+</html>

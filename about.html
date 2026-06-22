@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — HOXX</title>
+  <script>
+    // Apply saved theme before first paint to prevent a theme flash on navigation.
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('hoxx-theme') || 'dark');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-slash">/</span>HOXX</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="models.html">Models</a></li>
+    </ul>
+    <div class="nav__right">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">◑</button>
+      <a href="#contact" class="nav__cta btn btn--red">Get in Touch</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header__breadcrumb">
+        <span class="u-muted u-mono">HOME</span>
+        <span class="u-muted u-mono"> ▶ </span>
+        <span class="u-mono u-red">ABOUT</span>
+      </div>
+      <h1 class="display display--xl page-header__title">ABOUT<br /><span class="u-red">ME</span></h1>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BIO -->
+    <section class="bio">
+      <div class="bio__inner">
+        <div class="bio__portrait">
+          <div class="bio__portrait-frame">
+            <div class="corner-tl"></div>
+            <div class="corner-tr"></div>
+            <div class="corner-bl"></div>
+            <div class="corner-br"></div>
+            <div class="bio__portrait-placeholder">[ photo ]</div>
+          </div>
+          <div class="bio__portrait-label u-mono u-muted">HOXX — 2026</div>
+        </div>
+
+        <div class="bio__content">
+          <p class="eyebrow">Background</p>
+          <h2 class="display display--md bio__name">HOXX</h2>
+
+          <div class="bio__text">
+            <p>
+              I'm a multidisciplinary creative working at the intersection of
+              design, development, and illustration. I build digital products
+              that feel as good as they look — precise, intentional, and bold.
+            </p>
+            <p>
+              My background spans front-end engineering, brand identity, and
+              original character illustration. Whether I'm architecting a web
+              app or sketching a new character, the goal is always the same:
+              make something worth looking at twice.
+            </p>
+            <p>
+              Currently available for freelance projects and collaborations.
+            </p>
+          </div>
+
+          <div class="bi_o_skills">
+            <div class="bio__skill-group">
+              <p class="bio__skill-heading u-mono u-muted">Development</p>
+              <ul>
+                <li>HTML / CSS / JavaScript</li>
+                <li>React, Node.js</li>
+                <li>Web Animation</li>
+              </ul>
+            </div>
+            <div class="bio__skill-group">
+              <p class="bio__skill-heading u-mono u-muted">Design</p>
+              <ul>
+                <li>UI &amp; UX</li>
+                <li>Brand Identity</li>
+                <li>Typography</li>
+              </ul>
+            </div>
+            <div class="bio__skill-group">
+              <p class="bio__skill-heading u-mono u-muted">Illustration</p>
+              <ul>
+                <li>Character Design</li>
+                <li>Concept Art</li>
+                <li>Ink &amp; Digital</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- STATS STRIP -->
+    <section class="stats-strip">
+      <div class="stats-strip__item">
+        <span class="stats-strip__num display display--md">04+</span>
+        <span class="stats-strip__label">Projects shipped</span>
+      </div>
+      <div class="stats-strip__divider"></div>
+      <div class="stats-strip__item">
+        <span class="stats-strip__num display display--md">03</span>
+        <span class="stats-strip__label">Disciplines</span>
+      </div>
+      <div class="stats-strip__divider"></div>
+      <div class="stats-strip__item">
+        <span class="stats-strip__num display display--md">∞</span>
+        <span class="stats-strip__label">Ideas in progress</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact__header">
+        <p class="eyebrow">Contact</p>
+        <h2 class="display display--lg">
+          GET IN<br /><span class="u-red">TOUCH</span>
+        </h2>
+        <p class="contact__sub">
+          Open to freelance work, collaborations, and interesting conversations.
+        </p>
+      </div>
+
+      <div class="contact__body">
+        <div class="contact__links">
+          <a href="mailto:hello@hoxx.dev" class="contact__link">
+            <div class="contact__link-label u-mono u-muted">Email</div>
+            <div class="contact__link-value">hello@hoxx.dev</div>
+            <span class="contact__link-arrow">→</span>
+          </a>
+          <a href="https://github.com/hoxxshad" target="_blank" rel="noopener" class="contact__link">
+            <div class="contact__link-label u-mono u-muted">GitHub</div>
+            <div class="contact__link-value">github.com/hoxxshad</div>
+            <span class="contact__link-arrow">→</span>
+          </a>
+          <a href="#" class="contact__link">
+            <div class="contact__link-label u-mono u-muted">Twitter / X</div>
+            <div class="contact__link-value">@hoxx</div>
+            <span class="contact__link-arrow">→</span>
+          </a>
+          <a href="#" class="contact__link">
+            <div class="contact__link-label u-mono u-muted">Instagram</div>
+            <div class="contact__link-value">@hoxx</div>
+            <span class="contact__link-arrow">→</span>
+          </a>
+        </div>
+
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-field">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" name="email" type="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-input form-textarea" id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--red form-submit">
+            Send Message <span class="btn__arrow">→</span>
+          </button>
+          <p class="form-note u-mono u-muted" id="formStatus"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer__copy">© 2026 HOXX — All rights reserved.</span>
+    <ul class="footer__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/CodCatDev/CrosshairJs@main/src/crosshair.min.js"></script>
+</body>
+</html>

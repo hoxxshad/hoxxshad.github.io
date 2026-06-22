@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOXX — Portfolio</title>
+  <script>
+    // Apply saved theme before first paint to prevent a theme flash on navigation.
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('hoxx-theme') || 'dark');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-slash">/</span>HOXX
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="models.html">Models</a></li>
+    </ul>
+    <div class="nav__right">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">◑</button>
+      <a href="about.html#contact" class="nav__cta btn btn--red">Get in Touch</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__grid-line hero__grid-line--v1"></div>
+      <div class="hero__grid-line hero__grid-line--v2"></div>
+      <div class="hero__grid-line hero__grid-line--h1"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow">Creative Developer &amp; Artist</p>
+        <h1 class="display display--xl hero__title">
+          <span class="hero__title-line">DESIGN.</span>
+          <span class="hero__title-line hero__title-line--outline">CODE.</span>
+          <span class="hero__title-line">ART.</span>
+        </h1>
+        <p class="hero__sub">
+          Building sharp digital experiences —<br />
+          where visual craft meets technical precision.
+        </p>
+        <div class="hero__actions">
+          <a href="portfolio.html" class="btn btn--red">View Work <span class="btn__arrow">→</span></a>
+          <a href="artwork.html"   class="btn btn--ghost">Artwork</a>
+        </div>
+      </div>
+
+      <div class="hero__aside">
+        <div class="hero__stat">
+          <span class="hero__stat-num">04</span>
+          <span class="hero__stat-label">Projects</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">02</span>
+          <span class="hero__stat-label">Disciplines</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">∞</span>
+          <span class="hero__stat-label">Ideas</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <span>SCROLL</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- HERO BANNER (customizable: swap .banner--red for --cyan/--orange/--purple/--green,
+         and drop an <img> into .banner__art to replace the placeholder) -->
+    <section class="banner-section">
+      <div class="banner banner--red">
+        <div class="banner__inner">
+          <div class="banner__art">
+            <!-- Replace with: <img src="assets/banner.jpg" alt="Featured artwork" /> -->
+            <div class="banner__art-placeholder">[ Banner Art ]</div>
+          </div>
+          <div class="banner__body">
+            <p class="banner__eyebrow">Featured Series</p>
+            <h2 class="banner__title">LIDIA</h2>
+            <div class="banner__meta">
+              <span class="banner__tag">Character Design</span>
+              <span class="banner__pct">001</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>Design</span><span class="accent">✦</span>
+        <span>Development</span><span class="accent">✦</span>
+        <span>Illustration</span><span class="accent">✦</span>
+        <span>Motion</span><span class="accent">✦</span>
+        <span>Branding</span><span class="accent">✦</span>
+        <span>Web</span><span class="accent">✦</span>
+        <span>Design</span><span class="accent">✦</span>
+        <span>Development</span><span class="accent">✦</span>
+        <span>Illustration</span><span class="accent">✦</span>
+        <span>Motion</span><span class="accent">✦</span>
+        <span>Branding</span><span class="accent">✦</span>
+        <span>Web</span><span class="accent">✦</span>
+      </div>
+    </div>
+
+    <!-- ABOUT TEASER -->
+    <section class="about-teaser">
+      <div class="about-teaser__inner">
+        <div class="about-teaser__left">
+          <p class="eyebrow">About</p>
+          <h2 class="display display--lg about-teaser__heading">
+            WHO<br /><em class="u-red">I AM</em>
+          </h2>
+        </div>
+        <div class="about-teaser__right">
+          <p class="about-teaser__body">
+            I'm a multidisciplinary creative who works at the intersection
+            of visual art and interactive technology. I design, code, and
+            illustrate — driven by a love for precise aesthetics and
+            bold storytelling.
+          </p>
+          <a href="about.html" class="btn btn--white" style="margin-top:32px;">
+            Full Bio <span class="btn__arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section class="selected">
+      <div class="selected__header">
+        <p class="eyebrow">Selected Work</p>
+        <a href="portfolio.html" class="btn btn--ghost">All Projects →</a>
+      </div>
+
+      <div class="selected__grid">
+
+        <article class="card selected__card selected__card--wide" data-hover>
+          <div class="card__thumb">
+            <div class="card__thumb-placeholder">Project Preview</div>
+          </div>
+          <div class="card__body">
+            <p class="card__num">01</p>
+            <h3 class="card__title">Project Alpha</h3>
+            <p class="card__desc">
+              A full-stack web application with a bold visual identity
+              and real-time data layer.
+            </p>
+            <div class="card__tags">
+              <span class="card__tag">Web</span>
+              <span class="card__tag">React</span>
+              <span class="card__tag">Node</span>
+            </div>
+          </div>
+          <a href="portfolio.html" class="card__link">
+            View Project <span>→</span>
+          </a>
+        </article>
+
+        <article class="card selected__card" data-hover>
+          <div class="card__thumb">
+            <div class="card__thumb-placeholder">Project Preview</div>
+          </div>
+          <div class="card__body">
+            <p class="card__num">02</p>
+            <h3 class="card__title">Brand System</h3>
+            <p class="card__desc">
+              Visual identity and design system for a digital-first brand.
+            </p>
+            <div class="card__tags">
+              <span class="card__tag">Branding</span>
+              <span class="card__tag">Design</span>
+            </div>
+          </div>
+          <a href="portfolio.html" class="card__link">
+            View Project <span>→</span>
+          </a>
+        </article>
+
+        <article class="card selected__card" data-hover>
+          <div class="card__thumb">
+            <div class="card__thumb-placeholder">Artwork Preview</div>
+          </div>
+          <div class="card__body">
+            <p class="card__num">03</p>
+            <h3 class="card__title">Lidia Series</h3>
+            <p class="card__desc">
+              Original character illustration series — ink and digital.
+            </p>
+            <div class="card__tags">
+              <span class="card__tag">Illustration</span>
+              <span class="card__tag">Character</span>
+            </div>
+          </div>
+          <a href="artwork.html" class="card__link">
+            View Artwork <span>→</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DISCIPLINES -->
+    <section class="disciplines">
+      <div class="divider"></div>
+      <div class="disciplines__inner">
+        <p class="eyebrow">What I Do</p>
+        <div class="disciplines__list">
+          <div class="disciplines__item">
+            <span class="disciplines__num u-red">01</span>
+            <h3 class="disciplines__name">Development</h3>
+            <p class="disciplines__desc">Web apps, interactive experiences, clean code.</p>
+          </div>
+          <div class="disciplines__item">
+            <span class="disciplines__num u-red">02</span>
+            <h3 class="disciplines__name">Design</h3>
+            <p class="disciplines__desc">UI systems, branding, visual identities.</p>
+          </div>
+          <div class="disciplines__item">
+            <span class="disciplines__num u-red">03</span>
+            <h3 class="disciplines__name">Illustration</h3>
+            <p class="disciplines__desc">Characters, concept art, world-building.</p>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <h2 class="display display--lg cta-band__text">
+        LET'S <span class="u-red">WORK</span><br />TOGETHER
+      </h2>
+      <a href="about.html#contact" class="btn btn--red cta-band__btn">
+        Get in Touch <span class="btn__arrow">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer__copy">© 2026 HOXX — All rights reserved.</span>
+    <ul class="footer__links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/CodCatDev/CrosshairJs@main/src/crosshair.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Models — HOXX</title>
+  <script>
+    // Apply saved theme before first paint to prevent a theme flash on navigation.
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('hoxx-theme') || 'dark');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/artwork.css" />
+  <link rel="stylesheet" href="css/models.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-slash">/</span>HOXX</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+      <li><a href="models.html" class="active">Models</a></li>
+    </ul>
+    <div class="nav__right">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">◑</button>
+      <a href="about.html#contact" class="nav__cta btn btn--red">Get in Touch</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header__breadcrumb">
+        <span class="u-muted u-mono">HOME</span>
+        <span class="u-muted u-mono"> ▶ </span>
+        <span class="u-mono u-red">MODELS</span>
+      </div>
+      <h1 class="display display--xl page-header__title">3D <span class="u-red">MODELS</span></h1>
+      <p class="page-header__sub">
+        Low-poly and voxel models built in Blockbench — characters, props,
+        and environment pieces, rigged and export-ready.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- MODEL FILTER -->
+    <div class="filter-bar">
+      <span class="filter-bar__label u-mono u-muted">Type</span>
+      <div class="filter-bar__tags">
+        <button class="filter-tag active" data-filter="all">All</button>
+        <button class="filter-tag" data-filter="character">Characters</button>
+        <button class="filter-tag" data-filter="prop">Props</button>
+        <button class="filter-tag" data-filter="environment">Environment</button>
+      </div>
+      <span class="filter-bar__count u-mono u-muted" id="projectCount" data-label="Models">06 Models</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FEATURED MODEL -->
+    <section class="art-featured">
+      <div class="art-featured__media model-featured__media">
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+        <div class="model-stage">
+          <div class="model-stage__cube" aria-hidden="true">
+            <span class="model-stage__face model-stage__face--front"></span>
+            <span class="model-stage__face model-stage__face--back"></span>
+            <span class="model-stage__face model-stage__face--right"></span>
+            <span class="model-stage__face model-stage__face--left"></span>
+            <span class="model-stage__face model-stage__face--top"></span>
+            <span class="model-stage__face model-stage__face--bottom"></span>
+          </div>
+        </div>
+        <div class="art-featured__label u-mono">FEATURED — .BBMODEL</div>
+      </div>
+      <div class="art-featured__info">
+        <p class="eyebrow">Featured Model</p>
+        <h2 class="display display--lg art-featured__title">LIDIA — VOXEL</h2>
+        <p class="art-featured__series u-mono u-muted">Character Rig — No. 001</p>
+        <p class="art-featured__desc">
+          A fully rigged voxel build of the Lidia character, modeled in
+          Blockbench. Game-ready topology with a clean UV layout, baked
+          texture atlas, and a basic walk-cycle animation.
+        </p>
+        <div class="art-featured__meta">
+          <div class="art-featured__meta-item">
+            <span class="u-mono u-muted" style="font-size:10px;letter-spacing:.16em;">FORMAT</span>
+            <span>.bbmodel / glTF</span>
+          </div>
+          <div class="art-featured__meta-item">
+            <span class="u-mono u-muted" style="font-size:10px;letter-spacing:.16em;">ELEMENTS</span>
+            <span>48 cubes</span>
+          </div>
+          <div class="art-featured__meta-item">
+            <span class="u-mono u-muted" style="font-size:10px;letter-spacing:.16em;">RIGGED</span>
+            <span>Yes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- MODEL GRID -->
+    <section class="art-grid-section">
+      <div class="art-grid" id="modelGrid">
+
+        <!-- Model 01 -->
+        <article class="art-card" data-category="character" data-id="1">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Model 01 ]</div>
+            <span class="model-badge u-mono">glTF</span>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Lidia — Voxel</h3>
+              <span class="art-card__num u-mono u-muted">001</span>
+            </div>
+            <p class="art-card__desc">
+              Rigged voxel character with baked texture atlas and a
+              looping idle animation.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Character</span>
+              <span class="card__tag">Rigged</span>
+              <span class="art-card__year u-mono u-muted">48 cubes</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Model 02 -->
+        <article class="art-card" data-category="prop" data-id="2">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Model 02 ]</div>
+            <span class="model-badge u-mono">OBJ</span>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Sidearm Kit</h3>
+              <span class="art-card__num u-mono u-muted">002</span>
+            </div>
+            <p class="art-card__desc">
+              Low-poly weapon prop set — pistol, magazine, and holster
+              with shared texture sheet.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Prop</span>
+              <span class="card__tag">Low-poly</span>
+              <span class="art-card__year u-mono u-muted">22 cubes</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Model 03 -->
+        <article class="art-card" data-category="environment" data-id="3">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Model 03 ]</div>
+            <span class="model-badge u-mono">glTF</span>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Safe House</h3>
+              <span class="art-card__num u-mono u-muted">003</span>
+            </div>
+            <p class="art-card__desc">
+              Modular interior kit — walls, floor tiles, and props that
+              snap to a 16px grid.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Environment</span>
+              <span class="card__tag">Modular</span>
+              <span class="art-card__year u-mono u-muted">130 cubes</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Model 04 -->
+        <article class="art-card" data-category="character" data-id="4">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Model 04 ]</div>
+            <span class="model-badge u-mono">.bbmodel</span>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Agent — Blockout</h3>
+              <span class="art-card__num u-mono u-muted">004</span>
+            </div>
+            <p class="art-card__desc">
+              Early character blockout exploring proportions before
+              detailing and texturing.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Character</span>
+              <span class="card__tag">WIP</span>
+              <span class="art-card__year u-mono u-muted">31 cubes</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Model 05 -->
+        <article class="art-card" data-category="prop" data-id="5">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Model 05 ]</div>
+            <span class="model-badge u-mono">glTF</span>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Comms Device</h3>
+              <span class="art-card__num u-mono u-muted">005</span>
+            </div>
+            <p class="art-card__desc">
+              Handheld radio prop with animated antenna and emissive
+              status LEDs.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Prop</span>
+              <span class="card__tag">Animated</span>
+              <span class="art-card__year u-mono u-muted">18 cubes</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Model 06 -->
+        <article class="art-card" data-category="environment" data-id="6">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Model 06 ]</div>
+            <span class="model-badge u-mono">OBJ</span>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Crate Pack</h3>
+              <span class="art-card__num u-mono u-muted">006</span>
+            </div>
+            <p class="art-card__desc">
+              Set of stackable supply crates and barrels with tileable
+              textures for set dressing.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Environment</span>
+              <span class="card__tag">Set Dressing</span>
+              <span class="art-card__year u-mono u-muted">40 cubes</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Model viewer" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+    <div class="lightbox__inner">
+      <div class="lightbox__media" id="lightboxMedia"></div>
+      <div class="lightbox__info" id="lightboxInfo"></div>
+    </div>
+    <div class="lightbox__nav">
+      <button class="lightbox__nav-btn" id="lightboxPrev">← Prev</button>
+      <span class="lightbox__nav-count u-mono u-muted" id="lightboxCount"></span>
+      <button class="lightbox__nav-btn" id="lightboxNext">Next →</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="footer__copy">© 2026 HOXX — All rights reserved.</span>
+    <ul class="footer__links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="artwork.html">Artwork</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/CodCatDev/CrosshairJs@main/src/crosshair.min.js"></script>
+</body>
+</html>

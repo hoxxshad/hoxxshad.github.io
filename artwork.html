@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artwork — HOXX</title>
+  <script>
+    // Apply saved theme before first paint to prevent a theme flash on navigation.
+    (function () {
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('hoxx-theme') || 'dark');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/artwork.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-slash">/</span>HOXX</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="artwork.html" class="active">Artwork</a></li>
+      <li><a href="models.html">Models</a></li>
+    </ul>
+    <div class="nav__right">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">◑</button>
+      <a href="about.html#contact" class="nav__cta btn btn--red">Get in Touch</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header__breadcrumb">
+        <span class="u-muted u-mono">HOME</span>
+        <span class="u-muted u-mono"> ▶ </span>
+        <span class="u-mono u-red">ARTWORK</span>
+      </div>
+      <h1 class="display display--xl page-header__title">ART<span class="u-red">WORK</span></h1>
+      <p class="page-header__sub">
+        Original illustration, character design, and concept art.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ART FILTER -->
+    <div class="filter-bar">
+      <span class="filter-bar__label u-mono u-muted">Series</span>
+      <div class="filter-bar__tags">
+        <button class="filter-tag active" data-filter="all">All</button>
+        <button class="filter-tag" data-filter="character">Characters</button>
+        <button class="filter-tag" data-filter="concept">Concept</button>
+        <button class="filter-tag" data-filter="ink">Ink</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FEATURED PIECE -->
+    <section class="art-featured">
+      <div class="art-featured__media">
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+        <div class="art-featured__placeholder">[ Featured Artwork ]</div>
+        <div class="art-featured__label u-mono">FEATURED — 2026</div>
+      </div>
+      <div class="art-featured__info">
+        <p class="eyebrow">Featured Work</p>
+        <h2 class="display display--lg art-featured__title">LIDIA</h2>
+        <p class="art-featured__series u-mono u-muted">Character Series — No. 001</p>
+        <p class="art-featured__desc">
+          Lidia was trained by the KGB as an agent from an early age.
+          She can use magic to operate machines to eavesdrop on intelligence.
+          An original character exploring themes of duality — human warmth
+          buried under cold, utilitarian purpose.
+        </p>
+        <div class="art-featured__meta">
+          <div class="art-featured__meta-item">
+            <span class="u-mono u-muted" style="font-size:10px;letter-spacing:.16em;">MEDIUM</span>
+            <span>Ink &amp; Digital</span>
+          </div>
+          <div class="art-featured__meta-item">
+            <span class="u-mono u-muted" style="font-size:10px;letter-spacing:.16em;">YEAR</span>
+            <span>2026</span>
+          </div>
+          <div class="art-featured__meta-item">
+            <span class="u-mono u-muted" style="font-size:10px;letter-spacing:.16em;">SERIES</span>
+            <span>Characters</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ARTWORK GRID -->
+    <section class="art-grid-section">
+      <div class="art-grid" id="artGrid">
+
+        <!-- Piece 01 -->
+        <article class="art-card" data-category="character" data-id="1">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Artwork 01 ]</div>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Lidia — Field Op</h3>
+              <span class="art-card__num u-mono u-muted">001</span>
+            </div>
+            <p class="art-card__desc">
+              Full character sheet for Lidia in operational mode.
+              KGB insignia, weapon notes, and field annotations.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Character</span>
+              <span class="card__tag">Ink</span>
+              <span class="art-card__year u-mono u-muted">2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Piece 02 -->
+        <article class="art-card" data-category="concept" data-id="2">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Artwork 02 ]</div>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Weapon Catalogue</h3>
+              <span class="art-card__num u-mono u-muted">002</span>
+            </div>
+            <p class="art-card__desc">
+              Technical illustration series cataloguing fictional
+              weapons and tools from the same universe as Lidia.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Concept</span>
+              <span class="card__tag">Technical</span>
+              <span class="art-card__year u-mono u-muted">2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Piece 03 -->
+        <article class="art-card" data-category="ink" data-id="3">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Artwork 03 ]</div>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Study No. 7</h3>
+              <span class="art-card__num u-mono u-muted">003</span>
+            </div>
+            <p class="art-card__desc">
+              Loose ink studies exploring gesture and line weight.
+              Drawn in one continuous session, no references.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Ink</span>
+              <span class="card__tag">Study</span>
+              <span class="art-card__year u-mono u-muted">2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Piece 04 -->
+        <article class="art-card" data-category="character" data-id="4">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Artwork 04 ]</div>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Unknown Subject</h3>
+              <span class="art-card__num u-mono u-muted">004</span>
+            </div>
+            <p class="art-card__desc">
+              A new character in development. Background and
+              abilities still classified.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Character</span>
+              <span class="card__tag">WIP</span>
+              <span class="art-card__year u-mono u-muted">2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Piece 05 -->
+        <article class="art-card" data-category="concept" data-id="5">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Artwork 05 ]</div>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Environment Draft</h3>
+              <span class="art-card__num u-mono u-muted">005</span>
+            </div>
+            <p class="art-card__desc">
+              Concept sketches for a Cold War–era safe house interior —
+              muted palette, stark geometry.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Concept</span>
+              <span class="card__tag">Environment</span>
+              <span class="art-card__year u-mono u-muted">2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Piece 06 -->
+        <article class="art-card" data-category="ink" data-id="6">
+          <div class="art-card__media">
+            <div class="art-card__placeholder">[ Artwork 06 ]</div>
+            <div class="art-card__overlay">
+              <button class="art-card__expand" aria-label="View details">+</button>
+            </div>
+          </div>
+          <div class="art-card__info">
+            <div class="art-card__header">
+              <h3 class="art-card__title">Negative Space</h3>
+              <span class="art-card__num u-mono u-muted">006</span>
+            </div>
+            <p class="art-card__desc">
+              Exploring silhouette and void. What the ink doesn't
+              touch is as important as what it does.
+            </p>
+            <div class="art-card__foot">
+              <span class="card__tag">Ink</span>
+              <span class="card__tag">Abstract</span>
+              <span class="art-card__year u-mono u-muted">2025</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+    <div class="lightbox__inner">
+      <div class="lightbox__media" id="lightboxMedia"></div>
+      <div class="lightbox__info" id="lightboxInfo"></div>
+    </div>
+    <div class="lightbox__nav">
+      <button class="lightbox__nav-btn" id="lightboxPrev">← Prev</button>
+      <span class="lightbox__nav-count u-mono u-muted" id="lightboxCount"></span>
+      <button class="lightbox__nav-btn" id="lightboxNext">Next →</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="footer__copy">© 2026 HOXX — All rights reserved.</span>
+    <ul class="footer__links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/CodCatDev/CrosshairJs@main/src/crosshair.min.js"></script>
+</body>
+</html>
